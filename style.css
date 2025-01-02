@@ -1,0 +1,76 @@
+
+
+body {
+    background: rgb(234, 227, 227);
+    font-family: 'Courier New', Courier, monospace;
+}
+
+h1, h3 {
+text-align: center;
+font-size: 2em;
+}
+
+.container-main{
+    display: flex;
+    gap: 20px;
+    padding: 30px;
+    align-items: center;
+    align-content: stretch;
+}
+
+.container {
+    font-size: 1.6em;
+    display: flex;
+    width: 1200px;
+    flex-direction: column;
+    border: 2px solid black;
+    margin: 0 auto;
+    margin-top: 5rem;
+    padding: 60px;
+    background-color: rgb(249, 249, 249);
+    height: 100px;
+}
+
+
+/* Esconde o input */
+input[type=file]::-webkit-file-upload-button {
+    border: 1px solid grey;
+    background: #FFFAAA;
+    display: none;
+  }
+  
+  /* Aparência que terá o seletor de arquivo */
+  #file {
+    background-color: #3498db;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    margin: 10px;
+    padding: 6px 20px
+  }
+
+
+  .btn-send{
+    margin-top: 20px;
+  }
+
+  img {
+    max-width: 500px;
+    height: 300px;
+  }
+
+
+  .preview{
+    position: relative;
+    margin: 0 auto;
+    margin-top: 30px;
+    max-width: 1200px;
+    max-height: 400px;
+    height:400px;
+    padding: 10px;
+  }
+
+ 
+
+
+  
