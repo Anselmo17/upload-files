@@ -3,6 +3,8 @@
 # Resumo do projeto
 - Nesse projeto foi criado uma funcionalidade para fazer um upload de imagens e mostrar em uma galeria de imagens. 
 
+![Site](./assets/site.png)
+
 
 ## Tecnologias usadas
 - HTML
