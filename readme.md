@@ -11,7 +11,7 @@
 
 ### Funcionalidades
 - Fazer um upload de imagens [x]
-- ver um preview da imagem [x]
-- salvar a imagem em uma pasta no proprio projeto []
-- mostrar a imagem em uma galeria []
+- Ver um preview da imagem [x]
+- Salvar a imagem em uma pasta no proprio projeto []
+- Mostrar a imagem em uma galeria []
 
