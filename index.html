@@ -16,22 +16,31 @@
     <section class="container-main">
 
         <!-- Upload do arquivo -->
-        <section class="container">
-            <form id="uploadForm">
-                <div class="btn-input">
-                    <label>Selecione um arquivo:</label>
-                    <input type="file" id="file" accept="image/*" id="file">
-                </div>
-            </form>
-        </section>
-    
-        <!-- preview de image -->
-         <section class="preview">
-            <h3 id="title-preview"></h3>
-            <img src="" id="image">
+         <div class="container-upload">
+            <section class="container">
+                <form id="uploadForm">
+                    <div class="btn-input">
+                        <label>Selecione um arquivo:</label>
+                        <input type="file" id="file" accept="image/*" id="file">
+                    </div>
+                </form>
+            </section>
+        
+            <!-- preview de image -->
+             <section class="preview">
+                <h3 id="title-preview"></h3>
+                <img src="" id="image">
+             </section>
+         </div>
+
+         <section>
+            <button class="btn btn-4 btn-sep icon-send" onclick="uploadFile()">Salvar imagem</button>
          </section>
     </section>
 
+    <section class="gallery">
+      <span id="card"></span>
+    </section>
     
    
  <script src="script.js"></script>
