@@ -108,12 +108,12 @@ function removeCard(id) {
   const list = localStorage.getItem("Images");
 
   let imagesFinds = null;
-  list ? imagesFinds = JSON.parse(localStorage.getItem("Images")) : [];
+  list ? imagesFinds = JSON.parse(list) : [];
 
-  const imagesFiltered = imagesFinds.filter((item) => item.id === id);
+  const imagesFiltered = imagesFinds.filter((item) => item.id.toString() !== id);
 
-  //localStorage.removeItem('Images');
-  localStorage.setItem("Images", imagesFiltered);
+  !imagesFiltered.length ? localStorage.removeItem("Images") : localStorage.setItem("Images", imagesFiltered);
+  !imagesFiltered.length ? sectionGallery.innerHTML = "" : undefined;
 
   showImageSave();
 }
