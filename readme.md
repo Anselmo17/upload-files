@@ -18,4 +18,6 @@
 - Mostrar a imagem em uma galeria [x]
 - Recarregar as imagens na galeria [x]
 - Apos cadastrar uma imagem limpar a seção de imagem e o preview criado [x]
+- Ao iniciar a tela validar se tem imagens para ser apresentada na galeria [x]
+- Remover toda a galeria caso nao tenha nenhuma imagem [x]
 

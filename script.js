@@ -72,7 +72,6 @@ function showImageSave() {
 
 
   gallery.innerHTML = '';
-  btnSave.disabled = false;
   // Criar e exibir a imagem
   imagesBase64.forEach((item, index) => {
     // create btn
@@ -101,9 +100,8 @@ function showImageSave() {
 
     // add galley
     gallery.appendChild(card);
-
-    sectionGallery.style.display = "block";
   });
+  sectionGallery.style.display = "block";
 
   clearFields();
 }
@@ -124,7 +122,7 @@ function removeCard(id) {
   const imagesFiltered = imagesFinds.filter((item) => item.id.toString() !== id);
 
   !imagesFiltered.length ? localStorage.removeItem("Images") : localStorage.setItem("Images", JSON.stringify(imagesFiltered));
-  !imagesFiltered.length ? sectionGallery.innerHTML = "" : undefined;
+  !imagesFiltered.length ? sectionGallery.style.display = "none" : undefined;
 
   showImageSave();
 }
