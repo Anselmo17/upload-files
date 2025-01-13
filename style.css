@@ -152,6 +152,10 @@ img {
   width: 60px;
 }
 
+.align-btn{
+  width: 80%;
+}
+
 
 /* Galeria Images*/
 .section-gallery {
@@ -170,14 +174,18 @@ img {
   padding: 20px;
 }
 
-.gallery div {
+.gallery div img {
   width: 100%;
-  height: auto;
+  height: 300px;
   border-radius: 8px;
-  object-fit: contain;
+  object-fit: fill;
   transition: transform 0.3s ease-in-out;
 }
 
 .gallery img:hover {
   transform: scale(1.05);
+}
+
+.align-card {
+  max-width: 400px;
 }

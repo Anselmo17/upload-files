@@ -1,10 +1,13 @@
-// variables global
+// variables globals
 const imageInput = document.getElementById("image");
 const gallery = document.getElementById("gallery");
+const btnSave = document.getElementById('btn-save');
 const sectionGallery = document.querySelector(".section-gallery");
 const preview = document.querySelector(".preview");
 const fileInput = document.getElementById("file");
 fileInput.addEventListener("change", handleFileSelect);
+
+
 
 function handleFileSelect(event) {
   const file = event.target.files[0];
@@ -13,7 +16,6 @@ function handleFileSelect(event) {
 
 function readImageAsBlob(file) {
   const titlePreview = document.getElementById("title-preview");
-  const btnSave = document.getElementById("btn-save");
 
   const reader = new FileReader();
 
@@ -22,14 +24,19 @@ function readImageAsBlob(file) {
     titlePreview.innerText = "Preview da Imagem";
     preview.style.border = "5px solid rgb(0, 0, 0)";
     btnSave.style.display = "inline-block";
+    preview.style.display = "block";
   });
 
   reader.readAsDataURL(file);
 }
 
+
+
 function uploadFile() {
   const file = document.getElementById("file").files[0];
   this.saveImageAndBase64(file);
+
+  btnSave.style.display = "none";
 }
 
 function saveImageAndBase64(file) {
@@ -63,13 +70,16 @@ function showImageSave() {
     return;
   }
 
+
+  gallery.innerHTML = '';
+  btnSave.disabled = false;
   // Criar e exibir a imagem
   imagesBase64.forEach((item, index) => {
     // create btn
     const btnDelete = document.createElement("button");
     btnDelete.id = item.id;
     btnDelete.textContent = "remover";
-    btnDelete.className = "btn btn-1 btn-sep icon-send";
+    btnDelete.className = "btn btn-1 btn-sep icon-send align-btn";
     btnDelete.style.display = "inline-block";
 
     btnDelete.addEventListener('click', function(e) {
@@ -77,7 +87,6 @@ function showImageSave() {
       const id = e.currentTarget.id;
       console.log('id selecionado', id);
       removeCard(id);
-      //card.remove();
     });
 
     // create image
@@ -86,6 +95,7 @@ function showImageSave() {
 
     // create card
     const card = document.createElement("div");
+    card.classList.add('align-card');
     card.appendChild(img);
     card.appendChild(btnDelete);
 
@@ -99,9 +109,10 @@ function showImageSave() {
 }
 
 function clearFields() {
-  preview.innerHTML = "";
-  preview.style.border = "";
+  preview.style.display = "none";
   fileInput.innerHTML = "";
+  fileInput.value = null;
+
 }
 
 function removeCard(id) {
@@ -112,7 +123,7 @@ function removeCard(id) {
 
   const imagesFiltered = imagesFinds.filter((item) => item.id.toString() !== id);
 
-  !imagesFiltered.length ? localStorage.removeItem("Images") : localStorage.setItem("Images", imagesFiltered);
+  !imagesFiltered.length ? localStorage.removeItem("Images") : localStorage.setItem("Images", JSON.stringify(imagesFiltered));
   !imagesFiltered.length ? sectionGallery.innerHTML = "" : undefined;
 
   showImageSave();
