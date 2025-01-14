@@ -29,7 +29,7 @@ h3 {
 .container {
   font-size: 1.6em;
   display: flex;
-  width: 1200px;
+  max-width: 1200px;
   flex-direction: column;
   border: 2px solid black;
   margin: 0 auto;
@@ -79,8 +79,8 @@ img {
 }
 
 
-.section-btn{
- margin-top: 2rem;
+.section-btn {
+  margin-top: 2rem;
 }
 
 
@@ -152,7 +152,7 @@ img {
   width: 60px;
 }
 
-.align-btn{
+.align-btn {
   width: 80%;
 }
 
@@ -192,4 +192,22 @@ img {
 
 .align-card {
   max-width: 400px;
+}
+
+
+
+/************** Mobile *************/
+
+@media (max-width: 800px) {
+  #file {
+    font-size: .7rem;
+  }
+
+  .selected {
+    font-size: 1.2rem;
+  }
+
+  .container {
+    max-width: 250px;
+  }
 }
