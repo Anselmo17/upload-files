@@ -200,14 +200,22 @@ img {
 
 @media (max-width: 800px) {
   #file {
-    font-size: .7rem;
+    font-size: .6rem;
   }
 
-  .selected {
-    font-size: 1.2rem;
+}
+
+
+@media (max-width: 980px) {
+
+  .container-upload {
+    display: block;
   }
 
-  .container {
-    max-width: 250px;
+  img {
+    max-width: 1200px;
+    width: 100%;
+    height: 300px;
   }
 }
+
