@@ -64,12 +64,12 @@ function saveImageAndBase64(file) {
 function showImageSave() {
   // Verificar se a imagem está armazenada no localStorage
   const imagesBase64 = JSON.parse(localStorage.getItem("Images"));
+  preview.style.display =  fileInput.value ? "block" : "none";
 
   if (!imagesBase64) {
     console.log("Nenhuma imagem encontrada no localStorage.");
     return;
   }
-
 
   gallery.innerHTML = '';
   // Criar e exibir a imagem
@@ -82,9 +82,7 @@ function showImageSave() {
     btnDelete.style.display = "inline-block";
 
     btnDelete.addEventListener('click', function(e) {
-      // Implemente aqui a lógica específica que você deseja
       const id = e.currentTarget.id;
-      console.log('id selecionado', id);
       removeCard(id);
     });
 
